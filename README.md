@@ -1,4 +1,7 @@
 # docker-machine-share
+
+Use these scripts to share docker machine config with different user or different docker machine.
+
 Download the scripts:
 
 ```
