@@ -19,3 +19,15 @@ wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker
 
 `bash docker-machine-import.sh <machine-archive-path> [machine-cert-path]`
 
+
+# docker-machine-activate
+Update PS1 prompt to show which docker-machine is currently active
+
+Download the script:
+
+```
+wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker-machine-activate
+```
+
+Run `source docker-machine-activate <machine-name>` to activate a docker machine
+Run `deactivate` to deactivate

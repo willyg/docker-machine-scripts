@@ -1,0 +1,25 @@
+if [ -z "$1" ]; then
+    echo "source docker-machine-activate <machine-name>"
+    return 1
+fi
+
+MACHINE_NAME=$1
+
+docker-machine ip $MACHINE_NAME &> /dev/null
+EXIT_CODE=$?
+
+if ! [ $EXIT_CODE -eq 0 ]; then
+    echo "$MACHINE_NAME does not exist"
+    return 1
+fi
+
+deactivate(){
+    eval $(docker-machine env -u)
+    PS1="$OLD_PS1"
+    unset OLD_PS1
+    unset -f deactivate
+}
+
+eval $(docker-machine env $MACHINE_NAME)
+OLD_PS1="$PS1"
+PS1="($MACHINE_NAME) $PS1"
