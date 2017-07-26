@@ -30,4 +30,5 @@ wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker
 ```
 
 Run `source docker-machine-activate <machine-name>` to activate a docker machine
+
 Run `deactivate` to deactivate
