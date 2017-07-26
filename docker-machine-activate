@@ -8,7 +8,7 @@ MACHINE_NAME=$1
 docker-machine ip $MACHINE_NAME &> /dev/null
 EXIT_CODE=$?
 
-if ! [ $EXIT_CODE -eq 0 ]; then
+if [ ! $EXIT_CODE -eq 0 ]; then
     echo "$MACHINE_NAME does not exist"
     return 1
 fi
@@ -17,8 +17,15 @@ deactivate(){
     eval $(docker-machine env -u)
     PS1="$OLD_PS1"
     unset OLD_PS1
-    unset -f deactivate
+
+    if [ ! "$1" = "nondestructive" ]; then
+        unset -f deactivate
+    fi
 }
+
+if [ -n "$OLD_PS1" ]; then
+    deactivate nondestructive
+fi
 
 eval $(docker-machine env $MACHINE_NAME)
 OLD_PS1="$PS1"
