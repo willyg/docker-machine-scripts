@@ -1,4 +1,4 @@
-# docker-machine-share
+# docker-machine-export docker-machine-import
 
 Use these scripts to share docker machine config with different user or different docker machine.
 
