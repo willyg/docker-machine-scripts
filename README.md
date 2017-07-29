@@ -5,8 +5,8 @@ Use these scripts to share docker machine config with different user or differen
 Download the scripts:
 
 ```
-wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker-machine-import.sh
-wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker-machine-export.sh
+wget https://raw.githubusercontent.com/willyg/docker-machine-scripts/master/docker-machine-import.sh
+wget https://raw.githubusercontent.com/willyg/docker-machine-scripts/master/docker-machine-export.sh
 ```
 
 
@@ -26,7 +26,7 @@ Update PS1 prompt to show which docker-machine is currently active
 Download the script:
 
 ```
-wget https://raw.githubusercontent.com/willyg/docker-machine-share/master/docker-machine-activate
+wget https://raw.githubusercontent.com/willyg/docker-machine-scripts/master/docker-machine-activate
 ```
 
 Run `source docker-machine-activate <machine-name>` to activate a docker machine
